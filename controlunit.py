@@ -2,7 +2,7 @@
 class ControlUnit:
     def __init__(self,opcode):
         self.opcode=opcode
-    def instruction(self):
+    def getALUOpKey(self):
         add_operation_opcode="000001"
         and_operation_opcode="000010"
         or_operation_opcode="000011"

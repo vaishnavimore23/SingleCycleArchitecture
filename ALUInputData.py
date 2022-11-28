@@ -2,18 +2,18 @@
 import json
 
 class ALUInputData:
-    def __init__(self,input1,input2):
-        self.input1 = input1
-        self.input2 =input2
+    def __init__(self,sourceregister1,sourceregister2):
+        self.sourceregister1 = sourceregister1
+        self.sourceregister2 =sourceregister2
 
-    def ALUInputData(inputdata1,inputdata2,sourceregister1,sourceregister2,immediateField):
+    def ALUInputData(self):
          with open('registers.json', 'r') as openfile:
  
     # Reading from json file
           registers = json.load(openfile)
-          inputdata1 = registers[sourceregister1]
-          inputdata2 = registers[sourceregister2]
+          inputdata1 = registers[str(self.sourceregister1)]
+          inputdata2 = registers[str(self.sourceregister2)]
           
-          return inputdata1,inputdata2,immediateField
+          return inputdata1,inputdata2
 
         

@@ -3,38 +3,55 @@ class ID:
         self.instruction =instruction
     
 
-    def decodeInstruction(instruction):
-        if instruction[:6] == "000000":
+    def decodeInstruction(self):
+        opcode = ""
+      
+        if "".join(map(str, self.instruction[:6])) == "000000":
+            
             instructionType = "R-type Instruction"
+            
  
-            if "".join(instruction[26:] )==  "00100000":   #ADD instruction
+            if "".join(map(str,  self.instruction[26:]))==  "100000":   #ADD instruction
                 opcode = "000001"
-            if "".join(instruction[26:] )==  "00100100":    #AND instruction
+                return opcode,instructionType
+            if "".join(map(str, self.instruction[26:]) )==  "100100":    #AND instruction
                 opcode = "000010"
-            if "".join(instruction[26:] )==  "00100101":     #OR
+                return opcode,instructionType
+            if "".join(map(str, self.instruction[26:]) )==  "100101":     #OR
                 opcode = "000011"
-            if "".join(instruction[26:] )==  "00101010":     #slt
+                return opcode,instructionType
+            if "".join(map(str, self.instruction[26:]) )==  "101010":     #slt
                 opcode = "000100"
-            if "".join(instruction[26:] )==  "00100010":     #sub
+                return opcode,instructionType
+            if "".join(map(str, self.instruction[26:]) )==  "100010":     #sub
                 opcode = "000101"
-           
+                return opcode,instructionType
+            
         else:
             instructionType = "I-type Instruction"
+           
 
-            if "".join(instruction[26:] )==  "00001000":   #ADD instruction
+            if "".join(map(str, self.instruction[26:]))==  "001000":   #ADD instruction
                 opcode = "000001"
-            if "".join(instruction[26:] )==  "00001100":    #AND instruction
+                return opcode,instructionType
+            if "".join(map(str, self.instruction[26:]) )==  "001100":    #AND instruction
                 opcode = "000010"
-            if "".join(instruction[26:] )==  "00001101":     #OR
+                return opcode,instructionType
+            if "".join(map(str, self.instruction[26:]) )==  "001101":     #OR
                 opcode = "000011"
-            if "".join(instruction[26:] )==  "00001010":     #slt
+                return opcode,instructionType
+            if "".join(map(str, self.instruction[26:]) )==  "001010":     #slt
                 opcode = "000100"
-            if "".join(instruction[26:] )==  "00101011":     #sw
+                return opcode,instructionType
+            if "".join(map(str, self.instruction[26:]) )==  "101011":     #sw
                 opcode = "000011"
-            if "".join(instruction[26:] )==  "00100011":     #lw
+                return opcode,instructionType
+            if "".join(map(str, self.instruction[26:]) )==  "00100011":     #lw
                 opcode = "000111"
+                return opcode,instructionType
+            
             
         
-        print("Type of Instruction", instructionType)
+       
 
-        return opcode,instructionType
+       
