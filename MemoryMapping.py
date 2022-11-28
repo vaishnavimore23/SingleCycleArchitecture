@@ -7,7 +7,7 @@ class MemoryMapping:
         self.ALUOPkey =ALUOPkey
 
     def MemoryMapping(self):
-        
+
         if(self.ALUOPkey == "lw" or self.ALUOPkey == "sw" ):
           dictonary ={self.destination:self.result}
           json_obj = json.dumps(dictonary,indent=1)
@@ -16,8 +16,13 @@ class MemoryMapping:
   
         else:
             print("data writting  to json file")
-            dictonary ={self.destination:self.result}
-            json_obj = json.dumps(dictonary,indent=1)
+            with open('registers.json', 'r') as openfile:
+             registerFile_data = json.load(openfile)
+             
+            #dictonary ={self.destination:self.result}
+            registerFile_data[self.destination]=self.result
+
+            json_obj = json.dumps(registerFile_data,indent=1)
             with open ("registers.json","w") as outputfile:
                outputfile.write(json_obj)
                print("data written to json file")
