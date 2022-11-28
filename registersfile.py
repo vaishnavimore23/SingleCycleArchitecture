@@ -8,18 +8,18 @@ class RegisterFile:
         self.instruction =instruction
         self.immediateData =immediateData
 
-    def checkRegistersforExceution(instructionType,sourceRegister1,sourceRegister2,destinationRegister,instruction,immediateData):
-        if instructionType == "R-type Instruction":
-            sourceRegister1=instruction[6:11]
-            sourceRegister2 =instruction[11:16]
-            destinationRegister = instruction[16:21]
+    def checkRegistersforExceution(self):
+        if self.instructionType == "R-type Instruction":
+            sourceRegister1=self.instruction[6:11]
+            sourceRegister2 =self.instruction[11:16]
+            destinationRegister = self.instruction[16:21]
 
 
         else:
-            sourceRegister1=instruction[6:11]
+            sourceRegister1=self.instruction[6:11]
             #sourceRegister2 =instruction[11:16]
-            destinationRegister = instruction[11:16]
-            immediateData = instruction[16:]
+            destinationRegister = self.instruction[11:16]
+            immediateData = self.instruction[16:]
 
-        return sourceRegister1,sourceRegister2,destinationRegister,instruction,immediateData
+        return sourceRegister1,sourceRegister2,destinationRegister,self.instruction,immediateData
 

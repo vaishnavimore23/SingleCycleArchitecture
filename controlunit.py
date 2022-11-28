@@ -10,8 +10,8 @@ class ControlUnit:
         sub_operation_opcode="000101"
         # nor_operation_opcode="000110"
         # xor_operation_opcode="000111"
-        # load_word_operation_opcode="001000"
-        # store_word_operation_opcode="001001"
+        load_word_operation_opcode="000111"
+        store_word_operation_opcode="000011"
         # branch_equal_operation_opcode="001010"
         # branch_not_equal_operation_opcode="001011"
         # jump_operation_opcode="001100"
@@ -30,10 +30,10 @@ class ControlUnit:
         #     return "Nor"
         # if (self.opcode==xor_operation_opcode):
         #     return "Xor"
-        # if (self.opcode==load_word_operation_opcode):
-        #     return "Lw"
-        # if (self.opcode==store_word_operation_opcode):
-        #     return "Sw"
+        if (self.opcode==load_word_operation_opcode):
+            return "Lw"
+        if (self.opcode==store_word_operation_opcode):
+            return "Sw"
         # if (self.opcode==branch_equal_operation_opcode):
         #     return "Beq"
         # if (self.opcode==branch_not_equal_operation_opcode):

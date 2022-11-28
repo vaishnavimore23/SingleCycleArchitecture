@@ -29,6 +29,10 @@ class ID:
                 opcode = "000011"
             if "".join(instruction[26:] )==  "00001010":     #slt
                 opcode = "000100"
+            if "".join(instruction[26:] )==  "00101011":     #sw
+                opcode = "000011"
+            if "".join(instruction[26:] )==  "00100011":     #lw
+                opcode = "000111"
             
         
         print("Type of Instruction", instructionType)
