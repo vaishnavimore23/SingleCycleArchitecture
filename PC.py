@@ -1,4 +1,5 @@
 import DecimalToBinary
+import BinaryToDecimal
 
 class ProgramCounter:
 
@@ -6,8 +7,8 @@ class ProgramCounter:
         self.currentAddress = currentAddress
 
     def addByFour(self):
-        self.currentAddress =  self.currentAddress+ DecimalToBinary.DecimalToBinary(4)
-        print(self.currentAddress)
-        return self.currentAddress
+        self.currentAddress = BinaryToDecimal.BinaryToDecimal(self.currentAddress).BinaryToDecimal()  + 4
+        print( DecimalToBinary.DecimalToBinary( self.currentAddress).DecimalToBinary())
+        return DecimalToBinary.DecimalToBinary( self.currentAddress).DecimalToBinary()
     
     

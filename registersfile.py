@@ -1,3 +1,5 @@
+import SignExtender
+
 class RegisterFile:
 
     def __init__(self,instructionType,instruction):
@@ -23,6 +25,7 @@ class RegisterFile:
             #sourceRegister2 = []
             destination = self.instruction[11:16]
             immediateData = self.instruction[16:]
+            immediateData = SignExtender.SignExtender(immediateData).BitSExtention()
 
         return sourceRegister1,sourceRegister2,immediateData,destination
 

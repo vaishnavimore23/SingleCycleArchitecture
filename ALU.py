@@ -44,14 +44,14 @@ class ALU:
                     result.append(1)
                     carry=1
             
-            return result
+            return list(reversed(result))
                     
 
          if(self.ALUopKey=="Sub"):
             result=[]
             for i in range(32):
                 if(self.secondInput[32-i-1]==1):
-                    result=self.secondInput[32-i-1]+result
+                    result.append(self.secondInput[32-i-1])
                     for j in range(32-i-1):
                         if(self.secondInput[32-i-j-2]==0):
                             result.append(1)
@@ -60,6 +60,7 @@ class ALU:
                     break
                 else:
                     result.append(self.secondInput[32-i-1])
+            
             result_sub=[]
             carry=0
             for i in range(32):
