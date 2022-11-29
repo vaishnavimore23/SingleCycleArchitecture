@@ -17,6 +17,7 @@ class DataMemory:
              MemoryLocation =str(MemoryLocation)
              data_to_load_from_memory =  Data_in_Memory[MemoryLocation]
         return data_to_load_from_memory
-
-
+    
+ 
+    
         

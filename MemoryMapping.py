@@ -25,6 +25,6 @@ class MemoryMapping:
             json_obj = json.dumps(registerFile_data,indent=1)
             with open ("registers.json","w") as outputfile:
                outputfile.write(json_obj)
-               print("data written to Register File.........")
+              # print("data written to Register File.........")
 
     
