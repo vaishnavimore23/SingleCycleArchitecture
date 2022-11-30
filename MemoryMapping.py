@@ -28,7 +28,7 @@ class MemoryMapping:
   
         else:
             print("Writing  to Register File.........")
-           
+            print("Check registers.json")
             with open('registers.json', 'r') as openfile:
              registerFile_data = json.load(openfile)
              
