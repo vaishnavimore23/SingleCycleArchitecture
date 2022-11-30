@@ -21,16 +21,16 @@ def main():
      # currentaddress = "00000000000000000000000000000000"
       instruction = IF.IF(currentaddress).getinstruction()
       print("Binary form of instruction",instruction)
-      opcode, instructiontype = ID.ID(instruction).decodeInstruction()
-      print("Opcode/Fucntion: ",opcode)
+      ControlSignal, instructiontype,opcode = ID.ID(instruction).decodeInstruction()
+      print("Opcode/Fuction: ",opcode)
       print("Instruction Type: ", instructiontype)
-      ALUOPkey = controlunit.ControlUnit(opcode).getALUOpKey()
+      ALUOPkey = controlunit.ControlUnit(ControlSignal).getALUOpKey()
       print("ALU Operation: ",ALUOPkey)
       sourceRegister1,sourceRegister2,immediateData,destination =registersfile.RegisterFile(instructiontype,instruction).checkRegistersforExceution()
       register1=BinaryToDecimal.BinaryToDecimal(sourceRegister1).BinaryToDecimal()
       register2=BinaryToDecimal.BinaryToDecimal(sourceRegister2).BinaryToDecimal()
       destinationregister =BinaryToDecimal.BinaryToDecimal(destination).BinaryToDecimal()
-      inputdata1 , inputdata2 =ALUInputData.ALUInputData(register1,register2).ALUInputData()
+      inputdata1 , inputdata2 =ALUInputData.ALUInputData(register1,register2,instructiontype).ALUInputData()
       
       if instructiontype == "I-type Instruction":
         print("sourceRegister1",register1)

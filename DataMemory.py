@@ -15,8 +15,8 @@ class DataMemory:
           with open('DataMemory.json', 'r') as openfile:
              Data_in_Memory = json.load(openfile)
              MemoryLocation =str(MemoryLocation)
-             data_to_load_from_memory =  Data_in_Memory[MemoryLocation]
-        return data_to_load_from_memory
+             data_from_memory =  Data_in_Memory[MemoryLocation]
+        return data_from_memory
     
  
     

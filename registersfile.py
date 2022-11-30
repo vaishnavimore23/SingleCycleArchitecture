@@ -4,12 +4,9 @@ class RegisterFile:
 
     def __init__(self,instructionType,instruction):
         self.instructionType =instructionType
-        # self.sourceRegister1 =sourceRegister1
-        # self.sourceRegister2 =sourceRegister2
-        # self.destinationRegister =destinationRegister
+       
         self.instruction =instruction
-        # self.immediateData =immediateData
-
+        
     def checkRegistersforExceution(self):
         immediateData=[]
         sourceRegister2=[]

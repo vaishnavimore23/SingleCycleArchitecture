@@ -1,4 +1,5 @@
 import json
+import BinaryToDecimal
 
 class MemoryMapping:
     def __init__(self,destination,result,ALUOPkey):
@@ -9,13 +10,25 @@ class MemoryMapping:
     def MemoryMapping(self):
 
         if(self.ALUOPkey == "Sw" ):
-          dictonary ={self.destination:self.result}
-          json_obj = json.dumps(dictonary,indent=1)
+          
+          with open('registers.json', 'r') as openfile:
+             registerFile_data = json.load(openfile)
+             
+             destination_reg_data = registerFile_data[str(self.destination)]
+             print("Data in Register Rt",destination_reg_data)
+          with open('DataMemory.json', 'r') as datamemory:
+             Data_in_Memory = json.load(datamemory)
+             MemoryLocation_in_DataMemory = BinaryToDecimal.BinaryToDecimal(self.result).BinaryToDecimal()
+             Data_in_Memory[MemoryLocation_in_DataMemory]=destination_reg_data
+          json_obj1 = json.dumps(Data_in_Memory,indent=1)
           with open ("DataMemory.json","w") as outputfile:
-            outputfile.write(json_obj)
+            outputfile.write(json_obj1)
+          print("Writing  to Data Memory File.........")
+          print("Check DataMemory.json")
   
         else:
-            print("data writting  to Register File.........")
+            print("Writing  to Register File.........")
+           
             with open('registers.json', 'r') as openfile:
              registerFile_data = json.load(openfile)
              

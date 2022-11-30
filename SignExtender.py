@@ -10,7 +10,7 @@ class SignExtender:
         for i in range(len(self.ImmedidateField)):
             extensionBits.append(self.ImmedidateField[i])
         
-        print("signed extended data: ",extensionBits)
+        #print("signed extended data: ",extensionBits)
         return extensionBits
 
         

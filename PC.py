@@ -8,7 +8,7 @@ class ProgramCounter:
 
     def addByFour(self):
         self.currentAddress = BinaryToDecimal.BinaryToDecimal(self.currentAddress).BinaryToDecimal()  + 4
-        print( DecimalToBinary.DecimalToBinary( self.currentAddress).DecimalToBinary())
+       # print( DecimalToBinary.DecimalToBinary( self.currentAddress).DecimalToBinary())
         return DecimalToBinary.DecimalToBinary( self.currentAddress).DecimalToBinary()
     
     

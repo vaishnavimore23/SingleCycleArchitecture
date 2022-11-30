@@ -62,6 +62,7 @@ class ALU:
                     result.append(self.secondInput[32-i-1])
             
             result_sub=[]
+            result = list(reversed(result))
             carry=0
             for i in range(32):
                 if(self.firstInput[32-i-1]==0 and result[32-i-1]==0 and carry==0):
@@ -88,6 +89,7 @@ class ALU:
                 elif(self.firstInput[32-i-1]==1 and result[32-i-1]==1 and carry==1):
                     result_sub.append(1)
                     carry=1
+            result_sub = list(reversed(result_sub))
             return result_sub
 
          if(self.ALUopKey=="And"):
