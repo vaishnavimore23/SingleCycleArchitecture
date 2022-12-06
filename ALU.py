@@ -103,7 +103,7 @@ class ALU:
          if(self.ALUopKey=="Or"):
             result=[]
             for i in range(32):
-                if(self.firstInput[32-i-1]==0 and self.secondInput[32-i-1]==0):
+                if(self.firstInput[32-i-1]==0 or self.secondInput[32-i-1]==0):
                     result.append(0)
                 else:
                     result.append(1)

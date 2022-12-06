@@ -53,11 +53,11 @@ class ID:
                 controlSignal = "000100"
                 opcode ="001010"
                 return controlSignal,instructionType,opcode
-            if "".join(map(str, self.instruction[:6]) )==  "101011":     #swi
+            if "".join(map(str, self.instruction[:6]) )==  "101011":     #sw
                 controlSignal = "001000"
                 opcode= "101011"
                 return controlSignal,instructionType,opcode
-            if "".join(map(str, self.instruction[:6]) )==  "100011":     #lwi
+            if "".join(map(str, self.instruction[:6]) )==  "100011":     #lw
                 controlSignal = "000111"
                 opcode =  "100011"
                 return controlSignal,instructionType,opcode

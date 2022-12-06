@@ -14,11 +14,11 @@ def main():
     with open('instruction.json', 'r') as openfile:
              instruction_data = json.load(openfile)
     instruction_Addresses = list(instruction_data.keys())
-    #print(instruction_data)
+    
     for i in range(len(instruction_data)):
       currentaddress  = instruction_Addresses[i]
       print("currentaddress ",currentaddress)
-     # currentaddress = "00000000000000000000000000000000"
+    
       instruction = IF.IF(currentaddress).getinstruction()
       print("Binary form of instruction",instruction)
       ControlSignal, instructiontype,opcode = ID.ID(instruction).decodeInstruction()
